@@ -1,0 +1,14 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+load("@com_github_grpc_grpc//bazel:grpc_build_system.bzl", "grpc_proto_library", "grpc_package")
+
+package(default_visibility = ["//visibility:public"])
+
+grpc_proto_library(
+    name = "route_guide",
+    srcs = ["route_guide.proto"],
+)
+
+proto_library(
+    name = "route_guide_proto",
+    srcs = [":route_guide.proto"],
+)
